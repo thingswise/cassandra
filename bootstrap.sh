@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/dumb-init /bin/bash -x
 
 skydns_key=${CASSANDRA_SKYDNS:-/local/skydns/cassandra}
 local_address=${LOCAL_ADDRESS:-NOADDR}
@@ -22,4 +22,5 @@ declare -p hosts_str
     
 echo "Starting cassandra with seeds: ${hosts_str}"    
     
-CASSANDRA_SEEDS="${hosts_str}" /docker-entrypoint.sh $*
+CASSANDRA_SEEDS="${hosts_str}" 
+exec /docker-entrypoint.sh $*
