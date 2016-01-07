@@ -1,4 +1,6 @@
-#!/dumb-init /bin/bash -x
+#!/dumb-init /bin/bash
+
+set -x
 
 skydns_key=${CASSANDRA_SKYDNS:-/local/skydns/cassandra}
 local_address=${LOCAL_ADDRESS:-NOADDR}
