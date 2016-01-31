@@ -24,5 +24,5 @@ declare -p hosts_str
     
 echo "Starting cassandra with seeds: ${hosts_str}"    
     
-CASSANDRA_SEEDS="${hosts_str}" 
+export CASSANDRA_SEEDS="${hosts_str}" 
 exec /docker-entrypoint.sh $*
